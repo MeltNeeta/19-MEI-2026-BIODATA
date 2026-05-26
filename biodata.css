@@ -262,206 +262,21 @@ body {
     line-height: 1.5;
 }
 
-.cv .body .right .projects {
+.cv .body .right .container .thing ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-left: -40px;
 }
 
-.cv .body .right .projects h4 {
-    color: var(--black);
-    font-size: 50px;
-    font-family: "League Gothic", sans-serif;
-    font-weight: 400;
-    margin-top: 10px;
-    text-decoration: underline;
-}
-
-.cv .body .right .projects ul {
-    margin-top: -60px;
-}
-
-.cv .body .right .projects ul li{
+.cv .body .right .container .thing ul li {
     font-family: "Akt", sans-serif;;
-    font-size: 15px;
-    font-weight: 400;
-    margin-top: 20px;
-    line-height: 1.5;
-}
-
-.cv .body .right .organization {
-    display: flex;
-    flex-direction: column;
-}
-
-.cv .body .right .organization h4 {
-    color: var(--black);
-    font-size: 50px;
-    font-family: "League Gothic", sans-serif;
-    font-weight: 400;
-    margin-top: 10px;
-    text-decoration: underline;
-}
-
-.cv .body .right .organization .container {
-    margin-top: -40px;
-}
-
-.cv .body .right .organization .organizations {
-    display: flex;
-    flex-direction: column;
-    margin-top: -20px;
-}
-
-.cv .body .right .organization .organizations h5 {
-    font-family: "Akt", sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-    line-height: 1.5;
-}
-
-.cv .body .right .organization .organizations p {
-    font-family: "Akt", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-top: -20px;
-}
-
-.cv .body .right .skill {
-    display: flex;
-    flex-direction: row;
-}
-
-/*technical*/
-.cv .body .right .skill .technical {
-    padding-right: 50px;
-}
-
-.cv .body .right .skill .technical h4 {
-    color: var(--black);
-    font-size: 50px;
-    font-family: "League Gothic", sans-serif;
-    font-weight: 400;
-    margin-top: 10px;
-    text-decoration: underline;
-}
-
-.cv .body .right .skill .technical .container {
-    display: flex;
-    flex-direction: row;
-    margin-top: -80px;
-}
-
-.cv .body .right .skill .technical .container .web {
-    display: flex;
-    flex-direction: column;
-    padding-right: 20px;
-}
-
-.cv .body .right .skill .technical .container .web h5 {
-    font-family: "Akt", sans-serif;
     font-size: 20px;
-    font-weight: 800;
-    line-height: 1.5;
-}
-
-.cv .body .right .skill .technical .container .web ul {
-    margin-top: -30px;
-    margin-left: -25px;
-}
-
-.cv .body .right .skill .technical .container .web ul li {
-    font-family: "Akt", sans-serif;
     font-weight: 400;
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-.cv .body .right .skill .technical .container .art {
-    display: flex;
-    flex-direction: column;
-}
-
-.cv .body .right .skill .technical .container .art h5 {
-    font-family: "Akt", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    line-height: 1.5;
-}
-
-.cv .body .right .skill .technical .container .art ul {
-    margin-top: -30px;
-    margin-left: -25px;
-}
-
-.cv .body .right .skill .technical .container .art ul li {
-    font-family: "Akt", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-/*software*/
-.cv .body .right .skill .software h4 {
-    color: var(--black);
-    font-size: 50px;
-    font-family: "League Gothic", sans-serif;
-    font-weight: 400;
-    margin-top: 10px;
-    text-decoration: underline;
-}
-
-.cv .body .right .skill .software .container {
-    display: flex;
-    flex-direction: row;
-    margin-top: -80px;
-}
-
-.cv .body .right .skill .software .container .web {
-    display: flex;
-    flex-direction: column;
-    padding-right: 20px;
-}
-
-.cv .body .right .skill .software .container .web h5 {
-    font-family: "Akt", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    line-height: 1.5;
-}
-
-.cv .body .right .skill .software .container .web ul {
-    margin-top: -30px;
-    margin-left: -25px;
-}
-
-.cv .body .right .skill .software .container .web ul li {
-    font-family: "Akt", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-.cv .body .right .skill .software .container .art {
-    display: flex;
-    flex-direction: column;
-}
-
-.cv .body .right .skill .software .container .art h5 {
-    font-family: "Akt", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    line-height: 1.5;
-}
-
-.cv .body .right .skill .software .container .art ul {
-    margin-top: -30px;
-    margin-left: -25px;
-}
-
-.cv .body .right .skill .software .container .art ul li {
-    font-family: "Akt", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    margin-top: 10px;
+    padding: 15px;
+    color: var(--bright-yellow);
+    background-color: var(--black);
+    margin-right: 25px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 1px 0px var(--orange);
 }
