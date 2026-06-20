@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root {
+            --shadow: #7e7364;
+            --white: #f8f3ee;
+            --brown: #efb47c;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card {
+            background-color: var(--brown);
+            width: 90%;
+            max-width: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 4px 4px 0px var(--shadow);
+            padding: 20px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .foto-profil {
+            height: 120px;
+            width: 120px;
+            background-color: var(--white);
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .status {
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        /* bisa pakai min/max-width */
+        @media (max-width: 768px) and (min-width: 320px) {
+            /* Saat di pc (ukuran layar > 768px akan menyusun card ke samping) */
+            .card {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="card">
+
+        <div class="foto-profil">
+            Foto
+        </div>
+
+        <div class="konten-profil">
+            <h2>nama lengkap</h2>
+            <p class="status">Siswa Sija 3</p>
+            <p class="desc">Holaaaaaaaaaaaaaaaaaaaa</p>
+        </div>
+    </div>
+</body>
+</html>

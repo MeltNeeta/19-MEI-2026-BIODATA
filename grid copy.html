@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 250px 1fr 250px;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: rgb(234, 204, 97);
+            text-align: center;
+        }
+
+        .header {
+            grid-column: 1/4;
+            background-color: forestgreen;
+        }
+
+        .sidebar {
+            background-color: darkgreen;
+        }
+
+        .main-content {
+            background-color: green;
+        }
+
+        .right-bar {
+            background-color: rgb(119, 180, 26);
+        }
+
+        .footer {
+            background-color: darkslategray;
+            grid-column: 1/4;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="grid-container">
+        <div class="grid-item header">Header</div>
+        <div class="grid-item sidebar">Sidebar</div>
+        <div class="grid-item main-content">Main Content</div>
+        <div class="grid-item right-bar">Right Bar</div>
+        <div class="grid-item footer">Footer</div>
+    </div>
+
+</body>
+</html>

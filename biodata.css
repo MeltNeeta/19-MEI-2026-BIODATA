@@ -16,6 +16,42 @@ body {
     width: 100%;
 }
 
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--black);
+    padding: 0px 10px;   
+}
+
+.navbar .logo {
+    font-family: "League Gothic", sans-serif;
+    font-size: 40px;
+    margin-left: 50px;
+    -webkit-text-stroke: 1px var(--orange);
+    color: var(--black  );
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    padding: 0px 50px;
+    font-family: "League Gothic", sans-serif;
+    font-size: 25px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: var(--white2);
+    margin-right: 40px;
+}
+
+
+
 
 /*cv*/
 
@@ -34,7 +70,7 @@ body {
     font-size: 50px;
     -webkit-text-stroke: 1px var(--red);
     font-family: "League Gothic", sans-serif;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-bottom: -25px;
 }
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 200px 1fr 250px;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: rgb(234, 204, 97);
+            text-align: center;
+        }
+
+        .header {
+            grid-column: 1/4;
+            background-color: forestgreen;
+        }
+
+        .sidebar {
+            background-color: darkgreen;
+        }
+
+        .main-content {
+            background-color: green;
+            grid-column: 2/4;
+        }
+
+        .footer {
+            background-color: darkslategray;
+            grid-column: 1/4;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="grid-container">
+        <div class="grid-item header">Dashboar Admin (Audrey Janeeta Fahrani Supriady)</div>
+        <div class="grid-item sidebar">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Content</li>
+            </ul>
+        </div>
+        <div class="grid-item main-content">Main Content</div>
+        <div class="grid-item footer">©2026 Melt_Neeta. All rights reserved</div>
+    </div>
+
+</body>
+</html>

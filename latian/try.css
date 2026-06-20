@@ -1,0 +1,21 @@
+/* external css */
+
+body {
+    color: rebeccapurple;
+    /* warna text */
+
+    background-color: blanchedalmond;
+    /* warna bg */
+
+    font-size: 20px;
+    /* ukuran huruf */
+
+    font-weight: 400px;
+    /* ketebalan huruf */
+
+    text-align: center;
+    /* perataan text(kanan,kiri,tengah) */
+
+    text-decoration: none;
+    /* mengatur dekorasi */
+}
