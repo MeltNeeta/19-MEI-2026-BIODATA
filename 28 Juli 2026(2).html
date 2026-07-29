@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function calculate() {
+            var myBox1 = document.getElementById('box1').value;
+            var myBox2 = document.getElementById('box2').value;
+            var result = document.getElementById('result');
+            var myResult = myBox1 * myBox2; result.value = myResult;
+        }
+    </script>
+</head>
+<body>
+    
+    <table width="250px" border="0">
+        <tr>
+            <th>Box 1</th>
+            <th></th>
+            <th>Box 2</th>
+            <th></th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td><input id="box1" type="text" oninput="calculate()"/></td>
+            <td>×</td>
+            <td><input id="box2" type="text" oninput="calculate()"/></td>
+            <td>=</td>
+            <td><input id="result"/></td>
+        </tr>
+    </table>
+
+</body>
+</html>
