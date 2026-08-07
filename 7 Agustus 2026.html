@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- tombol HTML -->
+    <button onclick="tombolDiTekan()">Klik Saya</button>
+
+    <button onclick="cekStatus()">Cek Status</button> 
+<script>
+
+//A. Pengenalan Fungsi
+    // 1. Membuat Fungsi (Layar masih kosong)
+    function sapaSekolah() {
+        console.log("Saya siswa hebat SMK 7 Semarang!");
+    }
+    // 2. Memanggil Fungsi (baru muncul di console)
+    sapaSekolah();
+    sapaSekolah();
+
+    // Syntax Function
+    function sapaSiswa (namaSiswa) {
+        console.log("Halo "+namaSiswa+" Selamat Belajar");
+    } 
+    sapaSiswa("Budi");
+    sapaSiswa("Arez");
+    sapaSiswa("Rafa");
+    // latihan
+    function kopi (pelanggan, pesanan, rasa){
+        console.log(pelanggan+" memesan kopi "+pesanan+ " rasanya "+rasa)
+    }
+    kopi("Arez", "expresso", "pahit");
+    kopi("Theo", "Aren Lattee", "manis");
+
+    //Alert Function
+    function cekStatus() {
+        alert("status: alert dalam function bisa berjalan")
+    }
+
+    //Return
+    function perkalian(a, b) {
+        return a * b;
+    }
+    let total = perkalian(5, 4);
+    console.log("Hasil Perkalian: "+total)
+
+
+</script>
+
+</body>
+</html>
