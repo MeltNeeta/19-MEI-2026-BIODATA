@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // METHODE & ARRAY METHODE
+        let namaSiswa = " budi santoso ";
+        let contohKapital = "AHMAD AREZ";
+        let namaKapital = namaSiswa.toUpperCase(); //methode mengkapitalkan
+        let namaRapi = namaSiswa.trim(); //methode merapikan
+        let namaKecil = contohKapital.toLowerCase(); //methode mengecilkan
+        console.log(namaSiswa);
+        console.log("Setelah kapital: ", namaKapital);
+        console.log("Setelah kecil: ", namaKecil);
+        console.log("Setelah trim: ", namaRapi);
+
+        let playlist = ["Negoro Angin", "Jambu ALas", "Komang"];
+        console.log("Playlist Awal: ", playlist);
+        // 1. Push() -> Tambah di paling belakang
+        playlist.push("Evaluasi");
+        console.log("Setelah Push: ", playlist);
+        // 2. Unshift() -> Tambah di paling depan
+        playlist.unshift("Balonku ada lima");
+        console.log("Setelah unshift: ", playlist);
+        // 3. Pop() -> Hapus Paling belakang
+        playlist.pop();
+        console.log("setelah Pop: ", playlist);
+        // 4. Shift() -> Hapus paling depan
+        playlist.shift();
+        console.log("Setelah shift: ", playlist)
+
+        // latihan
+        let antrian = ["Lagu 1", "Lagu 2"];
+        console.log("Antrian Awal: ", antrian);
+        antrian.unshift("Lagu VIP");
+        console.log("Antrian ditambah di awal: ", antrian);
+        antrian.pop();
+        console.log("Antrian hapus belakang: ", antrian);
+        antrian.pop();
+        console.log("Antrian hapus belakang lagi: ", antrian);
+        antrian.shift();
+        console.log("Antrian hapus depan: ", antrian);
+
+        // 
+        let olahraga = ["Sepak Bola", "Bulu Tangkis", "Renang", "Lari"]
+        // 1. Includes() -> Pengecekan ada atau tidak
+        let adaRenang = olahraga.includes("Renang");
+        console.log("Apakah ada olahraga Renang?", adaRenang);
+        // 2. Find() -> Cari renang yang panjang hurufnya dibawah 5
+        let olgaPendek = olahraga.find(olga => olga.length<5);
+        console.log("Olahraga > 5 huruf: ", olgaPendek)
+        
+    </script>
+</body>
+</html>
