@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- OOP (Object Oriented Programming) 
+ 
+Property
+ex: Iphone-> Hitam, 16GB, Ibox
+
+Methode
+ex: Iphone-> Kamera, volume, pengaturan
+
+Object = Methode + Property
+
+Class
+"Template"
+
+Note:
+
+Object
+-> menyimpan banyak data sekaligus
+-> formatnya [ key: value ]
+
+Property
+-> Informasi/data
+
+Methode
+-> Fungsi yang dimasukkan
+
+class
+-> Cetakan untuk membuat banyak objek, struktur sama
+
+constructor
+-> fungsi khusus dalam class. Untuk ngisi nilai data awal
+
+new
+-> untuk mencetak objek baru dalam class
+
+Syncronus
+-> Berurutan (mana yang duluan, awal 1 2 3 4)
+
+Asynchronus
+-> Tidak urut/efisien
+
+-->
+
+<script>
+
+    // Membuat Object HP
+    let smartphone ={
+        // Property (data)
+        merk:"Iphone",
+        warna:"hitam",
+        ram:8,
+
+    // Methode (Tindakan)
+    nyalakanSenter: function(){
+        console.log("Senter HP menyala");
+    }
+    };
+
+    // panggil Property
+    console.log("Merk HP : ", smartphone.merk);
+    console.log("Ukuran RAM : ", smartphone.ram);
+
+    // panggil Methode
+    smartphone.nyalakanSenter();
+
+    // latihan
+    let sepeda ={
+        merek: "honda",
+        tahun: 2018,
+        warna: "putih",
+    };
+    console.log("merk sepda : ", sepeda.merek);
+    console.log("tahun keluaran : ", sepeda.tahun);
+    console.log("warna : ",sepeda.merek);
+
+    // 1. Bikin Cetakan (class)
+    class Mobil {
+        constructor(merek, warna){
+            this.merek = merek;
+            this.warna = warna;
+        }
+
+        // methode di dalam class
+        klakson(){
+            console.log(`Mobil ${this.merek} berwarna ${this.warna} membunyikan Klakson: beep beep`);
+        }
+    }
+
+    // 2. Cetak objek baru menggunakan kata kunci "new"
+    let mobilA = new Mobil("Toyota", "Hitam");
+    let mobilB = new Mobil("Mitsubishi", "Putih");
+
+    // 3. Jalankan Methodenya
+    mobilA.klakson();
+    mobilB.klakson();
+
+    // latihan
+
+    class Bank {
+        constructor(nama, saldo){
+            this.nama = nama;
+            this.saldo = saldo;
+        }
+
+        checkSaldo(){
+            console.log(`Atas nama ${this.nama} saldo tersisa ${this.saldo}`);
+        }
+    }
+
+    let penggunaA = new Bank("Ali", 100000000);
+    let penggunaB = new Bank("Drey", 6000000);
+    
+    penggunaA.checkSaldo();
+    penggunaB.checkSaldo();
+
+
+    // Syncronus & Asyncronus
+    console.log("1. Datang duluan");
+    console.log("2, Segera Pesan");
+    console.log("3. Pembayaran Berhasil");
+    console.log("4. Struk Tercetak");
+
+    // Seluruh kode diatas pasti tercetak dengan rapi dan urut
+    // 1 -> 2 -> 3 -> 4 
+    
+    console.log("1. Pesan Ayam geprek di kasir");
+    // setTimeout mensimulasikan proses masak yang butuh waktu 3 detik
+    setTimeout(()=>{
+        console.log("3. [asyn] ayam geprek selesai dimasak");
+    },3000);
+    console.log("2. Sambil menunggu, saya duduk dan main hp");
+
+</script>
+
+
+</body>
+</html>
