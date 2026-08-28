@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 
+        // validasi pembayaran
+        function prosesPembayaran(jumlah){
+            try{
+                console.log("1. Proses Pembayaran")
+                if (jumlah < 10000){
+                    throw new Error("Minimal Pembayaran adalah 10.000!");
+                }
+                console.log(`2. Pembayaran Rp${jumlah} Berhasil`);
+            } catch (error) {
+                console.log("3. [ERROR]", error.message);
+            } finally {
+                console.log("4. Matikan Animasi Loading");
+            }
+        }
+
+        prosesPembayaran(5000); //uji coba error
+        prosesPembayaran(10000);
+        //----------------------------------------------------------------------
+        //Validasi Umur //latihan
+        function prosesAkun(umur){
+            try{
+                console.log("1. Proses Memasukkan Umur")
+                if (umur < 13){
+                    throw new Error("Minimal Umur 13!");
+                }
+                console.log("2. Pembuatan  Akun Berhasil");
+            } catch (error) {
+                console.log("3. [ERROR]", error.message);
+            } finally {
+                console.log("4. Matikan Animasi Loading");
+            }
+        }
+
+        prosesAkun(10);
+        prosesAkun(13);
+
+        //cek saldo
+        function cekSaldo(saldo){
+            try{
+                console.log("1. Proses Cek Saldo")
+                if (saldo < 100000){
+                    throw new Error("Saldo Tidak Cukup");
+                }
+                console.log("2. Penarikan Berhasil", saldo);
+            } catch (error) {
+                console.log("3. [ERROR]", error.message);
+            } finally {
+                console.log("4. Sesi ATM selesai")
+            }
+        }
+
+        cekSaldo(10000);
+        cekSaldo(200000);
+
+        //
+        // Switch Case
+        //Contoh 1. Cek Pengiriman Paket
+        let statusOrder = "PENDING";
+        switch (statusOrder) {
+            case "PENDING":
+                console.log("Pesanan Sedang Dikemas");
+                break;
+            case "DIKIRIM":
+                console.log("Pesanan Sedang Dikemas");
+                break;
+            case "SELESAI":
+                console.log("Pesanan Sedang Dikemas");
+                break;
+            default:
+                console.log("Status Tidak Diketahui");
+                break;
+        }
+        //Latihan
+        let levelMember = "Gold";
+        switch (levelMember) {
+            case "Gold":
+                console.log("Diskon 20%");
+                break;
+            case "Silver":
+                console.log("Diskon 10%");
+                break;
+            default:
+                console.log("Tidak ada Diskon");
+                break;
+        }
+        //Latihan
+        let hari = "Senin";
+        switch (hari) {
+            case "Senin":
+            case "Selasa":
+            case "Kamis":
+            case "Jumat":
+            case "Rabu":
+                console.log("Hari Sekolah Harus Semangat");
+                break;
+            case "Sabtu":
+            case "Minggu":
+                console.log("Hari Libur");
+                break;
+            default:
+                console.log("Nama Hari tidak valid");
+                break;
+        }
+
+
+        //
+        //Looping
+        //Contoh menampilkan isi Array dengan For ... Of
+        console.log("---DAFTAR SEPATU (FOR ... OF)---");
+        let sepatuList =["Nike", "Adidas", "Puma"]
+        for (let sepatu of sepatuList) {
+            console.log("Sepatu : ", sepatu);
+        }
+
+        //Contoh menampilkan objek dengan For ... In
+        console.log("---Detail Profil HP (FOR...IN)---");
+        let hpDetail = {merk:"Samsung", ram:"8GB", harga:3000000};
+        for (let kunci in hpDetail){
+            console.log(`${kunci} : ${hpDetail[kunci]}`);
+        }
+    </script>
+
+</body>
+</html>
