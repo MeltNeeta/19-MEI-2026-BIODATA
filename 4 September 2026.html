@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 September 2026</title>
+</head>
+<body>
+    
+    <script>
+
+        // Review
+        function prosesPembayaran(cepat){
+            try{
+                console.log("1. Berkendara")
+                if (cepat > 80){
+                    throw new Error("Bahaya Terlalu Kencang!");
+                }
+                console.log(`2. Kecepatan : ${cepat} Kecepatan Aman`);
+            } catch (error) {
+                console.log("3. [ERROR]", error.message);
+            } finally {
+                console.log("4. Selesai Cek Kecepatan");
+            }
+        }
+
+        prosesPembayaran(90); //uji coba error
+        prosesPembayaran(40);
+
+
+        // OOP : Class Simple untuk cetak data siswa
+
+        class Siswa {
+            constructor(nama, nilai) {
+                this.nama = nama;
+                this.nilai = nilai;
+            }
+
+
+        // Methode Object & Switch Case
+        getGrade() {
+            switch (true) {
+                case (this.nilai >= 80):
+                    return "A (Lulus)";
+                case (this.nilai >= 70):
+                    return "B (Lulus)";
+                default:
+                    return "C (Remidi)";
+            }
+        }
+        }
+
+        //2. Fundamental Array
+
+        const kelasRp1 = [
+            new Siswa("Ahmad", 90),
+            new Siswa("Arez", 100),
+            new Siswa("Tegar", 90),
+            new Siswa("Doni", -10),
+        ];
+
+        // Function & Error
+        function olahNilaiKelas(daftarSiswa) {
+            console.log("===Data Nilai Siswa Kelas===");
+
+            try{
+                // Looping For ... Of
+                for (let siswa of daftarSiswa) {
+                    if (siswa.nilai < 0) {
+                        throw new Error (`Nilai ${siswa.nama} tidak boleh minus`);
+                    }
+                    console.log(`Nama: ${siswa.nama} | Nilai: ${siswa.nilai} | Status: ${siswa.getGrade()}`);
+                }
+                } catch (error) {
+                    console.log(`Terjadi Error: ${error.message}`);
+                } finally{
+                    console.log("==========");
+                    console.log("Selesai Diproses!");
+                }
+            }
+
+        // Latihan
+        class kucing {
+        constructor(nama, suara){
+            this.nama = nama;
+            this.suara = suara;
+        }
+
+        // methode di dalam class
+        meong(){
+            console.log(`${this.nama} dengan suara ${this.suara}`);
+        }
+    }
+
+    // 2. Cetak objek baru menggunakan kata kunci "new"
+    let kucingA = new kucing("mimi", "meow");
+
+    // 3. Jalankan Methodenya
+    kucingA.meong();
+
+    </script>
+</body>
+</html>
