@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Destructuring, Spread Operator, Rest Operator -->
+
+    <script>
+        // Data Objek Utama
+        const siswa ={nama: "Arez", kelas: "12 rpl"};
+        
+        // Cara Lama
+        const namaLama = siswa.nama;
+        const kelasLama = siswa.kelas;
+        console.log ("Cara Lama: ", namaLama, kelasLama);
+
+        // Cara Baru
+        const { nama, kelas } = siswa;
+        console.log( "Cara Baru: ", nama, kelas);
+
+        // Challenge
+        const wallet ={user: "Budi", saldo: "5.000.000"};
+
+        const { user, saldo } = wallet;
+        console.log( user, "memiliki saldo sebesar", saldo);
+
+        // Spread Operator
+        const timA =["Andi", "Budi"];
+        const timB =["Sigit", "Raffa"];
+        const timGabungan = [...timA, ...timB];
+        console.log("Tim Gabungan: ", timGabungan);
+        // 
+        const timC =["Agus", "Budi", "Sigit", "Raffa"];
+        const timD =["Mya", "Laila", "Mari", "Kira"];
+        const timE =["Maya", "Rana", "Mai", "Ryu"];
+        const timGabung = [...timC, ...timD, ...timE];
+        console.log("Tim Gabungan: ", timGabung);
+
+    </script>
+
+</body>
+</html>
