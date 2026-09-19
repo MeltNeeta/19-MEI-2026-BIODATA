@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // JS Array Methods Modern
+
+        // Foreach, Find, Some, Very, Includes (Ex. absen)
+        // Foreach : Panggil satu persatu
+        // Find : Mencari Data
+        // Some : Pengecekan minimal satu ada(true/false)
+        // Every : Pengecekan seluruh anggota (true/false)
+        // Includes : Cek isi kantong (true/false)
+
+        // -----ForEach
+        // Perulangan Cara Lama
+        const buah = ["Apel", "Mangga", "Pisang"];
+
+        for (let i = 0; i < buah.length; i++){
+            console.log("Cara Lama :", buah[i]);
+        }
+
+        //Perulangan Cara Baru
+        buah.forEach((item) => {
+            console.log("Cara Modern :", item)
+        })
+
+        // Challenge
+        const user = ["Budi", "Siti", "Sigit"];
+        user.forEach((nama) => {
+            console.log(nama, ", Email pengingat sudah dikirim!")
+        })
+
+        // -----Incudes
+        const adaPisang = buah.includes("Pisang");
+        console.log("Ada pisang? :", adaPisang)
+        
+        //Challenge
+        const roles = ["admin", "super admin"];
+        const adaEditor = roles.includes("Editor");
+        console.log("Ada editor? :", adaEditor);
+
+
+        const angka =[10,25,40,50];
+        //-----Find
+        const cariDiatas20=angka.find((n) => n >20);
+        console.log("Find (pertama ketemu) : ", cariDiatas20);
+
+        //-----Some
+        const adaAngkaGanjil = angka.some((n) => n % 2 !==0);
+        console.log("Some (ada ganjil?) :", adaAngkaGanjil);
+
+        //-----Every
+        const semuaDiatas5 = angka.every((n) => n > 5);
+        console.log("Every (Semua >5) :", semuaDiatas5);
+
+        //Challenge
+        const umur=[18, 22, 25, 17];
+        const diatas18 = umur.every((n) => n > 18);
+        console.log("Every (Semua >18) :", diatas18);
+
+        const stock=[15, 0, 8, 20];
+        const stock0 = stock.some((n) => n < 1);
+        console.log("Apakah ada barang yang stocknya 0? :", stock0);
+
+
+
+    </script>
+</body>
+</html>

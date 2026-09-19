@@ -10,6 +10,7 @@
     <!-- Destructuring, Spread Operator, Rest Operator -->
 
     <script>
+        console.log("Destructuring");
         // Data Objek Utama
         const siswa ={nama: "Arez", kelas: "12 rpl"};
         
@@ -28,6 +29,7 @@
         const { user, saldo } = wallet;
         console.log( user, "memiliki saldo sebesar", saldo);
 
+        console.log("Spread Operator");
         // Spread Operator
         const timA =["Andi", "Budi"];
         const timB =["Sigit", "Raffa"];
@@ -39,6 +41,36 @@
         const timE =["Maya", "Rana", "Mai", "Ryu"];
         const timGabung = [...timC, ...timD, ...timE];
         console.log("Tim Gabungan: ", timGabung);
+
+        console.log("Rest Operator");
+        // Rest Operator
+        // Rest(Sisa) Operator
+
+        // Daftar Pemain
+        const anggota = ["Coach Justin", "Ernando Ari", "Arez", "Tegar", "Aldrich"];
+        //mengambil pelatih, kiper, dan cadangan
+        const [Pelatih, Kiper, ...cadangan] = anggota;
+        // Memanggil
+        console.log("Pelatih : ", Pelatih);
+        console.log("Kiper Utama : ", Kiper);
+        console.log("Pemain Cadangan : ", cadangan);
+        console.log("Pemain Cadangan : ", cadangan.length, "Orang");
+
+        // challenge
+        const pelomba = ["dila", "Ari", "Arez", "Tegar", "Aldrich", "Maya"];
+        const [satu, dua, tiga, ...favorit] = pelomba;
+        console.log("Juara 1 : ", satu);
+        console.log("Juara 2 : ", dua);
+        console.log("Juara 3 : ", tiga);
+        console.log("Juara Favorit : ", favorit);
+
+        //challenge
+        const pengurus = ["dila", "Ari", "Arez", "Tegar", "Aldrich", "Maya", "Audrey"];
+        const [ketua, wakil, ...anggotakelas] = pengurus;
+        console.log("Ketua : ", ketua);
+        console.log("Wakil : ", wakil);
+        console.log("Anggota : ", anggotakelas);
+        console.log("Total Anggota : ", anggotakelas.length, "siswa");
 
     </script>
 
