@@ -1,0 +1,62 @@
+body {
+    font-family: cursive;
+    background-color: black;
+    padding: 30px;
+    color: antiquewhite;
+}
+
+.form-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+button {
+    padding: 10px 15px;
+    background: palevioletred;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.board {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.column {
+    background-color: dimgray;
+    padding: 15px;
+}
+
+.column h3 {
+    text-align: center;
+    color: antiquewhite;
+}
+
+.card {
+    background-color: black;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-done {
+    background-color: darkseagreen;
+    padding: 12px;
+    font-size: 12px;
+}
+
+h1 {
+    text-align: center;
+}
