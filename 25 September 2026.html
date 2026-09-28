@@ -5,35 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List Sederhana</title>
     <link rel="stylesheet" href="25 September 2026.css">
-    <script src="25 September 2026.js"></script>
 </head>
 <body>
     <h1>MY TASK BOARD</h1>
-
-    <!-- FORM INPUT TUGAS BARU -->
+    <!-- Input Tugas Baru -->
     <div class="form-container">
-        <input type="text" id="input-text" placeholder="Tulis Tugas Baru">
-        <button id="btnTambah">Tambah Tugas</button>
+        <input type="text" id="inputText" placeholder="Tulis Tugas Baru"/>
+        <button id="btn-tambah">+</button>
     </div>
 
-    <!-- PAPAN 2 KOLOM -->
-     <div class="board">
+    <!-- Papan 2 kolom -->
+    <div class="board">
         <div class="column">
-            <h3>Belum Selesai</h3>
+            <h3>On Going</h3>
             <div id="colToDo"></div>
         </div>
         <div class="column">
-            <h3>Selesai</h3>
+            <h3>Done</h3>
             <div id="colDone"></div>
         </div>
-     </div>
+    </div>
 
-     <script>
-        const properti ={nama: "Arez", kelas: "10 rpl"};
-        const { nama, kelas } = properti;
-        console.log( nama, "berada di kelas", kelas);
-
-        
-     </script>
+    <script src="25 September 2026.js"></script>
 </body>
 </html>
