@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JQuerry - Interactive Web</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: bisque;
+            padding: 30px;
+            transition: 0.3s;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: #ffb75e;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 5px #999360;
+            text-align: center;
+        }
+        button:hover {
+            background-color: darkolivegreen;
+        }
+        button {
+            padding: 10px 18px;
+            margin: 6px;
+            background-color: #999360;
+            color: beige;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .box {
+            width: 100%;
+            height: 100px;
+            background-color: blanchedalmond;
+            color: darkgreen;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: flex;
+            margin-top: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        .dark-mode {
+            background-color: navy !important;
+            color: aliceblue !important;
+        }
+        .dark-card {
+            background-color: darkblue !important;
+            color: azure !important;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="container" id="cardUtama">
+        <h1 id="judul">WEBSITE INTERAKTIF DIBUAT OLEH SAYA</h1>
+        <p id="deskripsi">Klik tombol di bawah untuk melihat fitur JQuery!</p>
+
+        <!-- Tombol Aksi -->
+         <button id="btnUbahTeks">Ubah Teks dan Warna</button>
+         <button id="btnToggleBox">Sembunyikan / Tampilkan Box</button>
+         <button id="btnDarkMode">Dark Mode</button>
+
+         <!-- Box Animasi -->
+        <div class="box" id="myBox">Halo! Saya Box Interaktif!</div>    
+    </div>
+    <script>
+        // Memastikan JQuery bisa dijalankan di website
+        $(document).ready(function(){
+            console.log("JQuery siap digunakan");
+
+            // Mengubah Teks dan Warna dengan JQuery
+            $("#btnUbahTeks").click(function(){ 
+                $("#judul").text("Judul berhasil diubah!"); 
+                $("#deskripsi").text("Sekarang, deskripsi sudah berhasil diubah!");
+                $("#judul").css("color", "#ffffff");
+            });
+        });
+        
+                    
+        //Bikin animasi meluncur 
+        $(document).ready(function(){
+            $("#btnToggleBox").click(function(){
+                $("#myBox").slideToggle(500);
+            });    
+        });
+        
+
+        // Untuk Mode Gelap
+        $("#btnDarkMode").click(function(){
+            $("body").toggleClass("#dark-mode");
+            $("body").toggleClass("dark-card");
+        }) 
+    </script>
+</body>
+</html>
