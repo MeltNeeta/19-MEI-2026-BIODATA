@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notification</title>
+
+    <!-- Import J Query -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: 'Sogoe UI', sans-serif;
+            background-color: cornsilk;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: rgb(220, 97, 20);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px #652929;
+            text-align: center;
+            color: blanchedalmond;
+        }
+        h1 {
+            font-size: 20px;
+            color: antiquewhite;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+            color: burlywood;
+            margin-bottom: 20px;
+        }
+        .btn-group{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            padding: 12px;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        
+        #btnSukses {
+            background-color: #8fbc8f;
+        }
+        #btnSukses:hover {
+            background-color: darkgreen;
+        }
+        #btnGagal {
+            background-color: #a52a2a;
+        }
+        #btnGagal:hover {
+            background-color: rgb(110, 0, 0);
+        }
+        #btnInfo {
+            background-color: #6495ed;
+        }
+        #btnInfo:hover {
+            background-color: midnightblue;
+        }
+
+        .toast-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px 20px 20px;
+            border-radius: 8px;
+            color: #555555;
+            font-weight: bold;
+            box-shadow: 0 4px 12px #ff8f2d;
+            display: none; /* Menyembunyikan di awal */
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        /* Loading write mundur (Progress Bar) */
+        #toastProgress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- TOAST Notification  -->
+
+    <div class="container">
+        <h1>System Notification Live</h1>
+        <p>Klik Tombol di bawah ini untuk menampilkan notifikasi</p>
+        
+        <div class="btn-group">
+            <button id="btnSukses"> Kirim Data Berhasil (Sukses)</button>
+            <button id="btnGagal"> Hapus Data Gagal (Sukses)</button>
+            <button id="btnInfo"> Informasi Sistem</button>
+        </div>
+
+        <!-- Kotak Toast Melayang -->
+        <div class="toast-box" id="myToast">
+            <span id="toastText">Pesan Notifikasi akan muncul disini</span>
+            <div id="toastProgress"></div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $("#btnSukses").click(function(){
+                $("#myToast")
+                .css("background-color", "#8fbc8f#")
+                .stop(true,true) // Hentikan animasi sebelumnya jika tombol diklik cepat
+                .fadeIn(300) // Munculkan secara halus selama 0.3 detik
+                .delay(2000) // Tahan selama 2 detik 
+                .fadeOut(300); // Hilangkan perlahan selama 0.3 detik
+            $("#toastText").text("Berhasil..!! Data kamu telah disimpan");
+            });
+
+            $("#btnGagal").click(function(){
+                $("#myToast")
+                .css("background-color", "#8fbc8f#")
+                .stop(true,true) // Hentikan animasi sebelumnya jika tombol diklik cepat
+                .fadeIn(300) // Munculkan secara halus selama 0.3 detik
+                .delay(2000) // Tahan selama 2 detik 
+                .fadeOut(300); // Hilangkan perlahan selama 0.3 detik
+            $("#toastText").text("Maaf, datamu gagal disimpan");
+            });
+
+            $("#btnInfo").click(function(){
+                $("#myToast")
+                .css("background-color", "#8fbc8f#")
+                .stop(true,true) // Hentikan animasi sebelumnya jika tombol diklik cepat
+                .fadeIn(300) // Munculkan secara halus selama 0.3 detik
+                .delay(2000) // Tahan selama 2 detik 
+                .fadeOut(300); // Hilangkan perlahan selama 0.3 detik
+            $("#toastText").text("Informasi Sistem");
+            });
+        });
+
+        $(document).ready(function(){
+            function tampilkanToast(pesan, warna, durasi){
+                durasi = durasi || 2000;
+
+                $("#myToast").css("background-color", warna);
+                $("#toastText").text(pesan);
+
+                $("#toastProgress").stop(true,true).css("width","100%");
+
+                $("#myToast").stop(true,true).fadeIn(300, function(){
+                    $("#toastProgress").animate({width: "0%"}, durasi, "linear", function(){
+                        $("#myToast").fadeOut(300);
+                    });
+                });
+            };
+
+            $("#btnSukses").click(function(){
+                tampilkanToast("Berhasil..!! Data kamu telah disimpan", "#8fbc8f", 2000);
+            });
+
+            $("#btnGagal").click(function(){
+                tampilkanToast("Maaf, datamu gagal disimpan", "#d36868", 2000);
+            });
+
+            $("#btnInfo").click(function(){
+                tampilkanToast("Informasi Sistem", 2000);
+            });
+        });
+
+    </script>
+
+</body>
+</html>
