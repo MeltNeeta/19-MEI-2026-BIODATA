@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX & Data Server Lokal</title>
+    <!-- Import Jquery via CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f3e9e2;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: #ffa876;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px #924545;
+        }
+
+        .quote-box {
+            background-color: #b14b0b;
+            color: #f3e9e2;
+            border-left: 6px solid #924545;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: #f3e9e2;
+            margin-bottom: 10px;
+        }
+
+        .quote-author {
+            font-weight: bold;
+            color: #40001e;
+            text-align: right;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #40001e;
+            color: #f3e9e2;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #ffa876;
+            color: #40001e;
+            transition: 0.2s;
+            box-shadow: 0 0 0 2px #40001e;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            background-color: #6790f8;
+        }
+
+        .toast-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background-color: #924545;
+            border-radius: 20px;
+            color: #ffa876;
+            font-weight: bold;
+            display: none;
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+    Data Server Lokal
+    >> Lokal di source code
+    Database(menyimpan data) DISIMPAN DI Server UNTUK MENGAKSES KE Hosting 
+    -->
+
+    <div class="container">
+
+        <h1>GENERATOR KUTIPAN</h1>
+
+        <div class="quote-box">
+            <div class="quote-text" id="quoteText">
+                "Klik tombol di bawah ini untuk mulai membuat server..."
+            </div>
+            <div class="quote-author" id="quoteAuthor">
+                - Sistem 
+            </div>
+        </div>
+
+        <button id="btnGetQuote">
+            "Ambil Kutipan Baru"
+        </button>
+
+    </div>
+
+    <div class="toast-box" id="myToast">
+        Data Berhasil Dimuat
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            // 1. Data Server Lokal (Array of Object)
+            var serverData =[
+                {text:"Jangan Takut Error, error adalah guru terbaik", author:"Arez"},
+                {text:"Pray for Kalimantan", author:"..."},
+                {text:"9 months + contraction for you to vote Prabowo? Lemme talk to your Mom", author:"hmmm"},
+                {text:"Bisakah kita tetap memberi? Walau tak suci", author:"Baskara"},
+            ];
+
+            // 2. Fungsi Toast Notification
+            function tamplikanToast(pesan){
+                $("#myToast")
+                .text(pesan)
+                .stop(true,true)
+                .fadeIn(300)
+                .delay(2000)
+                .fadeOut(300);
+            }
+
+        // Even Klik Tombol utama
+        $("#btnGetQuote").click(function(){
+
+            // Status Tombol Loading
+            $("#btnGetQuote").text("Memuat...").prop("disabled", true);
+            $("#quoteText").text("Menghubungkan ke server");
+            $("#quoteAuthor").text("- Mohon Tunggu");
+
+            // Jeda Waktu 1,5 detik
+            setTimeout(function(){
+                var acak = Math.floor(Math.random()*serverData.length);
+                var dataTerpilih = serverData[acak];
+
+            // Tampilkan hasil ke html
+            $("#quoteText").text('"'+ dataTerpilih.text + '"');
+            $("#quoteAuthor").text('-'+dataTerpilih.author);
+
+            // Kembalikan Tombol ke Semula & Panggil Toast sukses
+            $("#btnGetQuote").text("Cari Kutipan Lain").prop("disabled",false);
+            tamplikanToast("Data Berhasil Ditarik ke Server!");
+        }, 1500);
+
+        });
+
+        });
+    </script>
+
+</body>
+</html>
