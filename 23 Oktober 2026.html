@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Search</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: darkslategrey;
+            max-width: 450px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px #ffffff;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            -webkit-text-stroke: 1px cadetblue;
+        }
+
+        #searchBox {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: solid 2px #000000;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        #searchBox:focus {
+            border-color: darkturquoise;
+            outline: none;
+        }
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+        }
+
+        .product-item {
+            padding: 12px 15px;
+            background-color: cadetblue;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .product-item:hover {
+            background-color: #000000;
+            color: cadetblue;
+            cursor: pointer;
+        }
+
+        img {
+            border-radius: 40px;
+            max-width: 200px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Cari Produk di Neeta Shop</h2>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjEzrE5PLhcPo02xAUg6ORLJmEhS-DO_X73qFXTYVRohWGUZpqjJwrw3U&s=10"/>
+
+    <input type="text" id="searchBox" placeholder="ketikan nama barang"/>
+
+    <!-- Daftar Produk -->
+    <div class="product-list">
+        <div class="product-item" data-nama="Kopi Hitam">Kopi Hitam - Rp 10.000</div>
+        <!-- tambahkan 9 produk lain -->
+         <div class="product-item" data-nama="Dimsum Mentai">Dimsum Mentai - Rp 10.000</div>
+         <div class="product-item" data-nama="Ayam Geprek">Ayam Geprek - Rp 8.000</div>
+         <div class="product-item" data-nama="Kopi Susu">Kopi Susu - Rp 8.000</div>
+         <div class="product-item" data-nama="Matcha Latte">Matcha Latte - Rp 15.000</div>
+         <div class="product-item" data-nama="Seblak">Seblak - Rp 12.000</div>
+         <div class="product-item" data-nama="Cappucino">Cappucino - Rp 12.000</div>
+         <div class="product-item" data-nama="Classic Cookies">Classic Cookies - Rp 7.000</div>
+         <div class="product-item" data-nama="Butter Cookies">Butter Cookies - Rp 7.000</div>
+         <div class="product-item" data-nama="Nasi Bakar Cumi">Nasi Bakar Cumi - Rp 17.000</div>
+
+         <div id="pesanKosong" style="color: #ffffff; display: none;">Maaf Produk Tidak Tersedia</div>
+    </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // keyup= sensor di kontak input
+            $("#searchBox").keyup(function(){
+                // 1. Ambil data yang diketik, ubah jadi kecil-kecil
+                var keyword = $(this).val().toLowerCase();
+                var jumlahTampil = 0
+
+                // 2. Cek setiap item produk
+                $(".product-item").each(function(){
+                    var namaProduk = $(this).data("nama").toLowerCase();
+
+                    if (namaProduk.includes(keyword)){
+                        $(this).show(); // tampilkan jika cocok
+                        jumlahTampil++;
+                    } else {
+                        $(this).hide(); // sembunyikan jikatidak 
+                    }
+                });
+
+                // jika tidak ada satupun produk yang kamu cari
+                if(jumlahTampil === 0){
+                    $("#pesanKosong").show();
+                } else {
+                    $("#pesanKosong").hide();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
